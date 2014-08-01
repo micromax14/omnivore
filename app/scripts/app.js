@@ -12,13 +12,13 @@ angular
   .module('omnivoreApp', [
     'ui.router',
     'ngAnimate',
-    'ngTouch'
-
+    'ngTouch',
+    'angular.zeroclipboard'
   ])
   .config(function($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise("/");
+    //$urlRouterProvider.otherwise("/");
     //
     // Now set up the states
     $stateProvider
@@ -26,5 +26,11 @@ angular
             url: "/",
             templateUrl: "modules/main/main.html",
             controller: 'MainController'
+        })
+        .state('result', {
+            url: "/result",
+            templateUrl: "modules/result/_result.html",
+            controller: 'ResultController'
         });
     });
+  
