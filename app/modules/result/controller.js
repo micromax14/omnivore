@@ -8,12 +8,10 @@
  * Controller of the omnivoreApp
  */
 angular.module('omnivoreApp')
-    .controller('ResultController', ['$scope', 'formFactory', 'uiZeroclipConfig', function ($scope, formFactory, uiZeroclipConfigProvider) {
+    .controller('ResultController', ['$scope', 'formFactory', function ($scope, formFactory) {
         $scope.sorted = formFactory.sorted;
 
-        uiZeroclipConfigProvider.setZcConf( formFactory.sorted );
-
-        uiZeroclipConfigProvider.setOptions({
-          buttonText: 'Copy Me!'
-        });
+        $scope.getTextToCopy = function() {            
+            return $scope.sorted;
+        }
     }]);
