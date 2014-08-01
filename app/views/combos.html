@@ -1,0 +1,9 @@
+<p>
+    <select ng-model="selected" ng-options="c as c.name group by c.categoryType.name for c in categories track by c.id" class="form-control" multiple size="10"></select>
+</p>
+<p>
+    <button ng-click="selected = []" class="btn btn-primary">reset</button>
+</p>
+
+<pre><strong>selected:</strong> {{selected|json}}</pre>
+<pre><strong>categories:</strong> {{categories|json}}</pre>

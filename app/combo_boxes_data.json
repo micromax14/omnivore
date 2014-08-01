@@ -1,0 +1,13 @@
+{
+    "combos": [
+        {
+            "name": "City",
+            "options": [
+                {
+                    "id": 1,
+                    "name": "London"
+                }
+            ]
+        }
+    ]
+}
