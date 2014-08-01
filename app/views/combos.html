@@ -3,13 +3,15 @@
         <div class="form-group">
             <label for="field_{{ item.name }}" class="col-sm-2 control-label">{{ item.name }}</label>
             <div class="col-sm-10" ng-if="item.type === 'combo'">
-                <select id="field_{{ item.name }}" name="{{ item.name }}" ng-model="data" ng-options="value for (key, value) in item.options" class="form-control"></select>
+                <select ng-required="{{ item.required }}" id="field_{{ item.name }}" name="{{ item.name }}" ng-model="data" ng-options="value for (key, value) in item.options" class="form-control">
+                    <option value="">Please select...</option>
+                </select>
             </div>
             <div class="col-sm-10" ng-if="item.type === 'text'">
-                <input id="field_{{ item.name }}" type="text" name="{{ item.name }}" class="form-control" />
+                <input id="field_{{ item.name }}" type="text" name="{{ item.name }}" class="form-control" ng-required="{{ item.required }}" />
             </div>
             <div class="col-sm-10" ng-if="item.type === 'date'">
-                <input id="field_{{ item.name }}" type="date" name="{{ item.name }}" class="form-control" />
+                <input id="field_{{ item.name }}" type="date" name="{{ item.name }}" class="form-control" ng-required="{{ item.required }}" />
             </div>
         </div>
     </div>
