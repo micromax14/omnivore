@@ -15,8 +15,9 @@ angular.module('omnivoreApp')
     $scope.categories = [];
     $scope.selected = [];
 
-    DataLoader.get().then(function (categories) {
-      $scope.categories = categories;
+    DataLoader.get().then(function (data) {
+      $scope.formData = data;
+      console.log(data)
     });
   }]).
   service('DataLoader', ['$http', '$q', function ($http, $q) {
